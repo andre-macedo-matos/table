@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Opções</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" name="" id="" 
+                [(ngModel)]="checkedAll"  (change)="checkAll($event)">
+            <span>{{quantidade}} Selecionados</span>
+            <button>Desativar</button>
+        </td>
+    </tr>
+    <div *ngFor="let i of [1,2,3]">
+        <app-table-row #checkbox [index]="i" (check)="addQuantity($event)"
+            [(isAllChecked)]="checkedAll">
+        </app-table-row>
+    </div>
+</table>
